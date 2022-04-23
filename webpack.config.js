@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   module: {
     rules: [
       {
@@ -7,35 +7,32 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             query: {
-              presets: [ '@babel/preset-env' ],
+              presets: ["@babel/preset-env"],
             },
           },
-        ]
+        ],
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(svg)$/,
         use: [
           {
-            loader: 'raw-loader',
-          }
-        ]
-      }
-    ]
+            loader: "raw-loader",
+          },
+        ],
+      },
+    ],
   },
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
-    filename: 'bundle.js',
-    library: 'Marker',
-    libraryTarget: 'umd'
-  }
+    path: __dirname + "/dist",
+    publicPath: "/",
+    filename: "bundle.js",
+    library: "CustomMarker",
+    libraryTarget: "umd",
+  },
 };
